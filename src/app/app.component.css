@@ -1,0 +1,654 @@
+/*Global*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .container {
+    width: 100vw;
+  }
+  
+  li {
+    list-style-type: none;
+  }
+  
+  a {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+  }
+  
+  #body {
+    background: #111;
+    position: absolute;
+    left: 0;
+    top: 80px;
+    width: 100%;
+    height: auto;
+  }
+  
+  /*Header*/
+  #header {
+    display: flex;
+    background: rgb(238, 238, 238);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 80px;
+    width: 100%;
+    z-index: 3;
+  }
+  
+  #header-img {
+    width: 300px;
+    height: 50px;
+    margin: 15px;
+  }
+  
+  #nav-bar {
+    display: flex;
+    position: absolute;
+    right: 0px;
+    padding: 15px;
+    margin-right: 60px;
+    font-size: 21px;
+  }
+  
+  li {
+    padding: 15px  50px 0px 0;
+    font-size: 18px;
+  }
+
+  
+  
+  #hamburger {
+    background: rgba(187, 31, 57, 0);
+    position: absolute;
+    cursor: pointer;
+    height: 35px;
+    width: 40px;
+    z-index: 4;
+  }
+
+  .burger {
+    position: fixed;
+    top: 23px;
+    right: 40px;
+    z-index: 3;
+    visibility: hidden;
+  }
+  
+  .line {
+    background: rgb(0, 0, 0);
+    position: relative;
+    top: 4px;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    width: 40px;
+    height: 5px;
+    z-index: 2;
+  }
+  
+  /*body*/
+  
+  /*video*/
+  .vid {
+    position: relative;
+    top: 60px;
+    height: 80vh;
+    width: 1536px;
+    display: flex;
+    margin: auto;
+    overflow-y: hidden;
+    cursor: pointer;
+  }
+
+  .vid:active,
+  .all-videos:active  {
+    cursor: pointer !important;
+  }
+
+  .animation {
+    animation: 6s ease-out fadein;
+  }
+
+  @keyframes fadein {
+    0% {
+      opacity: 0;
+    }
+    30% {
+      opacity: 0.1;
+    }
+    50% {
+      opacity: 0.2;
+    }
+    70% {
+      opacity: .3;
+    }
+    90% {
+      opacity: 0.6;
+    }
+    
+    100% {
+      opacity: 0.9;
+    }
+  }
+
+  .all-videos {
+    display: flex;
+    height: 100%;
+    min-width: 100%;
+    width: 100%;
+    border: 3px solid #eee;
+  }
+
+  ::-webkit-scrollbar { 
+    width: 0;
+    height: 0;
+  }
+
+  .video-1 {
+    background: url('https://cdn3.dualshockers.com/wp-content/uploads/2019/09/The-Last-of-Us-Part-II-2.jpg');
+    background-size: cover;
+    background-position: center center;
+  }
+
+  .video-2 {
+    background: url('https://cdn.wccftech.com/wp-content/uploads/2017/10/The-Last-Of-Us-2-4K-2060x1159.jpg');
+    background-size: cover;
+    background-position: center center;
+  }
+
+  .video-3 {
+    background: url('https://images.wallpapersden.com/image/download/the-last-of-us-part-ii_a2ttamuUmZqaraWkpJRobWllrWdma2U.jpg');
+    background-size: cover;
+    background-position: center center;
+   }
+  
+  .video {
+    margin: auto;
+    display: inline-block;
+    width: 600px;
+    height: 400px;
+    z-index: 0;
+  }
+
+  .helper {
+    position: relative;
+    top: -220px;
+    margin: auto;
+    width: 200px;
+    text-align: center;
+    font-size: 38px;
+    color: rgb(221, 221, 221);
+    opacity: 0;
+    visibility: hidden;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    animation: 10s ease-out fadeout;
+  }
+
+  .arrow {
+    font-size: 38px;
+  }
+
+  @keyframes fadeout {
+    0% {
+      visibility: visible;
+      transform: translateX(-400px);
+      opacity: 0.6
+    }
+    80% {
+      opacity: 0.4;
+    }
+    100% {
+      transform: translateX(700px);
+      opacity: 0;
+    }
+  }
+
+
+
+  /*buttons for videos*/
+  #left {
+    position: absolute;
+    top: 390px;
+    left: 250px;
+  }
+
+  #right {
+    position: absolute;
+    top: 390px;
+    right: 250px;
+  }
+
+  a.video-buttons {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #000000af;
+    color: white;
+    font-size: 22px;
+    vertical-align: middle;
+    text-align: center;
+    border-radius: 3px;
+  }
+
+  .video-buttons:active {
+    background-color: #c4c4c4;
+    color: rgb(17, 17, 17);
+    transform: scale(1.1);
+  }
+  
+  /*Games*/
+  #games {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 95vw;
+    margin: 200px auto 0;
+    padding: 10px;
+  }
+  
+  #games h2 {
+    display: block;
+    position: absolute;
+    left: 20px;
+    background: rgb(206, 27, 27);
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+    border-radius: 4px;
+    padding: 10px;
+  }
+  
+  .game {
+    height: 300px;
+    width: 230px;
+    border-radius: 2px;
+    box-shadow: 0px 1px 7px 1px black;
+    margin: 90px 10px 20px;
+    overflow-y: hidden !important;
+  }
+  
+  .image {
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 85%;
+    border-radius: 3px 3px 0 0;
+  }
+  
+  .buy-btn {
+    position: relative;
+    top: 0px;
+    height: 15%;
+    width: 100%;
+    font-size: 20px;
+    background: #ff8c00;
+    border: none;
+    border-radius: 0 0 3px 3px;
+    cursor: pointer;
+  }
+  
+  .game:hover {
+    transform: scale(1.03);
+    cursor: pointer;
+  }
+  
+  /*Form*/
+  #form {
+    position: relative;
+    width: 40vw;
+    height: 190px;
+    margin: 60px auto 60px;
+    display: flex;
+    flex-direction: column;
+    background: #eee;
+    padding: 20px;
+    border-radius: 3px;
+  }
+  
+  form h3,
+  input,
+  button {
+    margin: 3px auto;
+    border-radius: 3px;
+  }
+
+  #form p {
+    text-align: center;
+    font-size: 18px;
+    padding: 5px;
+  }
+  
+  #email {
+    width: 70%;
+    padding: 8px 10px;
+    border: 1px solid #bbb;
+  }
+  
+  button {
+    padding: 5px;
+    cursor: pointer;
+  }
+  
+  h3 {
+    text-align: center;
+    font-weight: lighter;
+    color: rgb(116, 124, 158);
+  }
+  
+
+  #top {
+    color: rgb(131, 131, 131);
+    padding: 15px 15px 25px 15px;
+    width: 150px;
+    margin: 20px 0 0 20px;
+    font-size: 16px;
+    text-decoration: underline;
+  }
+
+  #top a {
+    color: white;
+  }
+  
+  /*Media*/
+
+  @media(max-width: 1554px) {
+    .vid {
+      width: 1200px;
+    }
+  }
+
+
+  @media(max-width: 1218px) {
+    .vid {
+      width: 980px;
+    }
+
+    #left {
+      left: 160px;
+    }
+
+    #right {
+      right: 160px;
+    }
+
+    .video-buttons {
+      visibility: hidden;
+    }
+  }
+
+  
+  @media (max-width: 1000px) {
+    #form {
+      width: 50vw;
+    }  
+
+    .vid {
+      width: 800px;
+    }
+  }
+  
+  @media (max-width: 850px) {
+    #form {
+      width: 400px;
+    }
+    
+    #form h3,
+    input,
+    button {
+      width: 90%;
+    }
+
+    label {
+      padding-left: 20px;
+    }
+  }
+  
+  @media (max-width: 870px) {
+    
+    #nav-bar {
+      flex-direction: column;
+      visibility: hidden;
+      position: absolute;
+      top: 80px;
+      display: block;
+      width: 100vw;
+      text-align: center;
+      margin: auto;
+    }
+    
+    li {
+      line-height: 40px;
+      padding: 10px 0;
+    }
+    
+    .burger {
+      visibility: visible;
+    }
+  }
+
+  @media (min-width: 871px) {
+    .helper {
+      top: -100px;
+    }
+
+    #nav-bar {
+      visibility: visible !important;
+    }
+
+    #header {
+      height: 80px !important;
+    }
+  }
+
+  @media (max-width: 818px) {
+    .all-videos {
+      border: none;
+    }
+
+    .vid {
+      top: 0;
+      width: 100vw;
+    }
+
+    .video {
+      width: 600px;
+      height: 400px;
+    }
+
+    #left{
+      top: 500px;
+    }
+
+
+
+  }
+  
+  @media (max-width: 700px) {
+
+    .vid {
+      width: 100vw;
+      height: 600px;
+    }
+
+    .video {
+      width: 500px;
+      height: 360px;
+    }
+    
+    #form {
+      width: 70vw;
+    }
+  }
+  
+  @media (max-width: 550px) {
+    #header-img {
+      width: 250px;
+    }
+    
+    #form {
+      width: 85vw;
+    }
+    
+    .game {
+      margin: 80px auto 20px;
+    }
+
+    .image {
+      width: 100%;
+    }
+    
+  }
+
+  @media (max-width: 506px) {
+    #games h2 {
+      position: relative;
+      text-align: center;
+      left: 72px;
+    }
+  }
+
+  @media(max-width: 500px) {
+    .video {
+      margin: 80px auto;
+    }
+
+    .vid {
+      height: 660px;
+    }
+  }
+  
+  @media(max-width: 450px) {
+    .container {
+      width: 100vw;
+    }
+
+    #games h2 {
+      left: 23px;
+    }
+
+    .game {
+      margin: 80px auto 20px;
+    }
+
+    #top {
+      margin: auto;
+      text-align: center;
+    }
+
+    #form h3 {
+      font-size: 20px;
+    }
+  }
+
+  /*height*/
+  @media (max-height: 1000px) {
+    @media (max-width: 1110px) {
+      #left {
+        top: 700px;
+        left: 400px;
+      }
+      #right {
+        top: 700px;
+        right: 400px;
+      }
+
+    }
+
+    @media (max-width: 943px) {
+      #left {
+        top: 700px;
+        left: 300px;
+      }
+      #right {
+        top: 700px;
+        right: 300px;
+      }
+    }
+
+    @media (max-width: 818px) {
+      #left {
+        top: 600px;
+        left: 300px;
+      }
+      #right {
+        top: 600px;
+        right: 300px;
+      }
+
+    }
+
+    @media (max-width: 700px) {
+      #left {
+        top: 500px;
+        left: 150px;
+      }
+      #right {
+        top: 500px;
+        right: 150px;
+      }
+    }
+
+    @media (max-width: 406px) {
+      #left {
+        top: 500px;
+        left: 100px;
+      }
+      #right {
+        top: 500px;
+        right: 100px;
+      }
+    }
+    
+  }
+
+  @media (max-height: 668px) {
+    @media (max-width: 380px) {
+      .video {
+        margin: 20px auto;
+        height: 300px;
+      }
+
+      #left {
+        top: 450px;
+      }
+      #right {
+        top: 450px;
+      }
+    }
+  }
+
+
+  @media (min-height: 1024px) {
+    @media (min-width: 700px) {
+      #left {
+        top: 700px;
+        left: 300px;
+      }
+      #right {
+        top: 700px;
+        right: 300px;
+      }
+    }
+  }
+
+  @media (min-height: 1366px) {
+    @media (min-width: 1024px) {
+      #left {
+        top: 580px;
+        left: 100px;
+      }
+      #right {
+        top: 580px;
+        right: 100px;
+      }
+    }
+  }
+
+
+
